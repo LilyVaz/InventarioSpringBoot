@@ -21,11 +21,7 @@ public class EgresoService {
     @Autowired
     private EgresoRepository egresoRepository;
     @Autowired
-    private EmpleadoRepository empleadoRepository;
-    @Autowired
     private EgresoMapper egresoMapper;
-    @Autowired
-    private EmpleadoMapper empleadoMapper;
 
     public List<EgresoDTO> findAll() {
         return egresoMapper.toDTOList(egresoRepository.findAll());
@@ -40,18 +36,18 @@ public class EgresoService {
         return egresoMapper.toDTO(egresoRepository.save(egreso));
     }
     
-    public EmpleadoDTO update(Integer id, EmpleadoDTO empleadoDTO) {
-    Optional<Empleado> empleadoExistente = empleadoRepository.findById(id);
-    if (empleadoExistente.isPresent()) {
-        Empleado empleado = empleadoMapper.toEntity(empleadoDTO);
-        empleado.setIdEmpleado(id);
-        return empleadoMapper.toDTO(empleadoRepository.save(empleado));
+    public EgresoDTO update(Integer id, EgresoDTO egresoDTO) {
+    Optional<Egreso> egresoExistente = egresoRepository.findById(id);
+    if (egresoExistente.isPresent()) {
+        Egreso egreso = egresoMapper.toEntity(egresoDTO);
+        egreso.setIdEgreso(id);
+        return egresoMapper.toDTO(egresoRepository.save(egreso));
     }
     return null;
     }
 
     public void deleteById(Integer id) {
-        empleadoRepository.deleteById(id);
+        egresoRepository.deleteById(id);
     }
 
 }

@@ -20,12 +20,12 @@ public class HistorialInventarioService {
     private HistorialInventarioMapper historialInventarioMapper;
 
     
-    public List<HistorialInventarioDTO> listarTodos() {
+    public List<HistorialInventarioDTO> findAll() {
         List<HistorialInventario> historial = historialInventarioRepository.findAll();
         return historialInventarioMapper.toDTOList(historial);
     }
 
-    public Optional<HistorialInventarioDTO> listarPorId(Integer id) {
+    public Optional<HistorialInventarioDTO> findById(Integer id) {
         return historialInventarioRepository.findById(id).map(historialInventarioMapper::toDTO);
     }
 }
