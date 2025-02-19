@@ -1,6 +1,9 @@
 package com.Inventario.entity;
 
 
+import com.Inventario.entity.util.TipoContacto;
+import com.Inventario.entity.util.TipoEntidad;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,10 +33,3 @@ public class Contacto {
     private String valor;
 }
 
-enum TipoEntidad {
-    PROVEEDOR, EMPLEADO
-}
-
-enum TipoContacto {
-    TELEFONO, EMAIL
-}
