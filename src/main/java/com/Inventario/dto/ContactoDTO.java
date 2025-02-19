@@ -1,10 +1,10 @@
 package com.Inventario.dto;
 
+import com.Inventario.entity.util.TipoContacto;
+import com.Inventario.entity.util.TipoEntidad;
+
 import lombok.Getter;
 import lombok.Setter;
-import com.Inventario.entity.TipoEntidad;
-import com.Inventario.entity.TipoContacto;
-
 @Getter
 @Setter
 public class ContactoDTO {
