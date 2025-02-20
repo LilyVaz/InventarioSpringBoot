@@ -8,7 +8,6 @@ import lombok.Setter;
 public class ProveedorDTO {
     private Integer idProveedor;
     private String nombre;
-    private String contacto;
     private String direccion;
     private Boolean estado;
 }
