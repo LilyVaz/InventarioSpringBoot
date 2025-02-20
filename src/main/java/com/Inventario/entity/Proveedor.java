@@ -25,9 +25,6 @@ public class Proveedor {
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(length = 100)
-    private String contacto;
-
     @Column(columnDefinition = "TEXT")
     private String direccion;
 
