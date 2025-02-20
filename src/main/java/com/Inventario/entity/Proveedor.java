@@ -19,7 +19,7 @@ public class Proveedor {
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name="direccion")
     private String direccion;
 
     
