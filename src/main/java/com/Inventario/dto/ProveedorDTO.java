@@ -9,5 +9,4 @@ public class ProveedorDTO {
     private Integer idProveedor;
     private String nombre;
     private String direccion;
-    private Boolean estado;
 }

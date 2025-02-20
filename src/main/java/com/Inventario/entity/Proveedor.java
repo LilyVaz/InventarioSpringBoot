@@ -28,6 +28,5 @@ public class Proveedor {
     @Column(columnDefinition = "TEXT")
     private String direccion;
 
-    @Column(nullable = false)
-    private Boolean estado = true;
+    
 }
