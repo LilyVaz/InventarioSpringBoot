@@ -1,19 +1,18 @@
 package com.Inventario.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
+@Data
 @Entity
 @Table(name = "productos")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_producto")
     private Integer idProducto;
 
     @Column(nullable = false, length = 100)

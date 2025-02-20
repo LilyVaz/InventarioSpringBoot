@@ -1,10 +1,8 @@
 package com.Inventario.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class CategoriaDTO {
     private Integer idCategoria;
     private String nombre;

@@ -1,20 +1,20 @@
 package com.Inventario.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "inventario")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Inventario {
     @Id
+    @Column(name = "id_producto")
+    private Integer idProducto;
+
     @OneToOne
-    @JoinColumn(name = "id_producto")
+    @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     private Producto producto;
 
-    @Column(nullable = false)
-    private Integer stockActual = 0;
+    @Column(name = "stock_actual", nullable = false)
+    private Integer stockActual;
 }

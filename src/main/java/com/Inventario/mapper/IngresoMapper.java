@@ -4,14 +4,11 @@ import com.Inventario.dto.IngresoDTO;
 import com.Inventario.entity.Ingreso;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface IngresoMapper {
-    
-    IngresoMapper INSTANCE = Mappers.getMapper(IngresoMapper.class);
 
     @Mapping(source = "producto.idProducto", target = "idProducto")
     @Mapping(source = "empleado.idEmpleado", target = "idEmpleado")

@@ -4,14 +4,11 @@ import com.Inventario.dto.ProductoDTO;
 import com.Inventario.entity.Producto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ProductoMapper {
-
-    ProductoMapper INSTANCE = Mappers.getMapper(ProductoMapper.class);
 
     @Mapping(source = "categoria.idCategoria", target = "idCategoria")
     @Mapping(source = "proveedor.idProveedor", target = "idProveedor")
