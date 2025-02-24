@@ -3,6 +3,7 @@ package com.Inventario.mapper;
 import com.Inventario.dto.ContactoDTO;
 import com.Inventario.entity.Contacto;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface ContactoMapper {
 
     List<ContactoDTO> toDTOList(List<Contacto> contactos);
     List<Contacto> toEntityList(List<ContactoDTO> contactoDTOs);
+
+    void updateEntity(ContactoDTO contactoDTO, @MappingTarget Contacto contacto);
 }

@@ -9,10 +9,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "contactos")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class Contacto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
