@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 public class EgresoDTO {
     private Integer idEgreso;
-    private Integer idProducto;
+    private Integer producto;
     private String descripcion;
     private Integer cantidad;
     private BigDecimal monto;
