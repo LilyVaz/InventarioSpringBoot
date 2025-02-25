@@ -7,10 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "historial_inventario")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class HistorialInventario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
