@@ -1,9 +1,14 @@
 package com.Inventario.mapper;
 
 import com.Inventario.dto.IngresoDTO;
+import com.Inventario.entity.Empleado;
 import com.Inventario.entity.Ingreso;
+import com.Inventario.entity.Producto;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.Named;
 
 import java.util.List;
 
@@ -20,4 +25,24 @@ public interface IngresoMapper {
 
     List<IngresoDTO> toDTOList(List<Ingreso> ingresos);
     List<Ingreso> toEntityList(List<IngresoDTO> ingresoDTOs);
+
+    @Mapping(target = "producto", source = "idProducto", qualifiedByName = "mapProducto")
+@Mapping(target = "empleado", source = "idEmpleado", qualifiedByName = "mapEmpleado")
+void updateEntity(IngresoDTO ingresoDTO, @MappingTarget Ingreso ingreso);
+
+@Named("mapProducto")
+default Producto mapProducto(Integer id) {
+    if (id == null) return null;
+    Producto producto = new Producto();
+    producto.setIdProducto(id);
+    return producto;
+}
+
+@Named("mapEmpleado")
+default Empleado mapEmpleado(Integer id) {
+    if (id == null) return null;
+    Empleado empleado = new Empleado();
+    empleado.setIdEmpleado(id);
+    return empleado;
+}
 }
